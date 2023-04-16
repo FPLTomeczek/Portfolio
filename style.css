@@ -4,13 +4,22 @@
   font-family: "Montserrat", sans-serif;
   color: #d6d6d6;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: black;
+}
+
 button {
   background-color: transparent;
   border: none;
 }
 
 .app {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   background: linear-gradient(#e66465, #9198e5);
 }
@@ -20,21 +29,30 @@ button {
   margin: 0 auto;
 }
 
+/* navbar */
+
 .navbar {
-  padding: 1rem 0;
+  padding: 2rem 0;
+  width: 100vw;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 .navbar ul {
   display: flex;
-  gap: 2rem;
+  width: 100%;
+  font-size: 0.7rem;
   list-style-type: none;
+  justify-content: space-around;
+}
+.nav-list {
+  width: 100%;
 }
 
 .list-hidden {
   display: none;
 }
 
+/* about */
 .about {
   text-align: center;
 }
@@ -47,7 +65,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .tech-icons {
@@ -60,10 +78,130 @@ button {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  cursor: pointer;
+}
+.icon-btn i {
+  transition: all 1s;
+  font-size: 1rem;
+}
+
+.icon-btn:hover .fa-html5 {
+  color: #e34c26;
+}
+.icon-btn:hover .fa-js {
+  color: #f0db4f;
+}
+.icon-btn:hover .fa-css3-alt {
+  color: #264de4;
+}
+.icon-btn:hover .fa-react {
+  color: #00d8ff;
+}
+.icon-btn:hover .fa-node-js {
+  color: #3c873a;
+}
+.icon-btn:hover .fa-java {
+  color: #f89820;
+}
+.icon-btn:hover .fa-python {
+  color: #4b8bbe;
 }
 
 .main-tech,
 .secondary-tech {
   width: 100%;
   text-align: center;
+}
+
+/* timeline */
+
+.timeline {
+  position: relative;
+  max-width: 100%;
+  z-index: 0;
+  margin-left: 5%;
+}
+
+.container {
+  padding: 1rem;
+}
+
+@keyframes text-box_fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.text-box {
+  position: relative;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 5px;
+  z-index: 1;
+  margin-left: 20px;
+  opacity: 0;
+}
+#text-box-1 {
+  animation: text-box_fade-in 2s forwards;
+}
+#text-box-2 {
+  animation: text-box_fade-in 2s 2s forwards;
+}
+#text-box-3 {
+  animation: text-box_fade-in 2s 4s forwards;
+}
+#text-box-4 {
+  animation: text-box_fade-in 2s 6s forwards;
+}
+.text-box > span {
+  color: #6b6b6b;
+}
+.text-box > h2 {
+  margin-bottom: 8px;
+}
+.text-box > p {
+  margin-top: 4px;
+}
+.text-box .triangle {
+  top: 10%;
+  left: -15px;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-right: 15px solid white;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+@keyframes line-animation {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+.line-axis {
+  position: absolute;
+  height: 100%;
+  width: 6px;
+  left: -10px;
+  background-color: white;
+  z-index: 1;
+  animation: line-animation 8s forwards linear;
+}
+.logo {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: -62px;
+  top: 8%;
+  z-index: 0;
+}
+.logo img {
+  object-fit: cover;
+  width: 100%;
+  border-radius: 50%;
 }
