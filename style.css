@@ -12,6 +12,13 @@ h5,
 h6 {
   color: black;
 }
+h1 {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
 
 button {
   background-color: transparent;
@@ -70,7 +77,8 @@ button {
 
 .tech-icons {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 1rem;
   padding: 1rem 0;
 }
 .icon-btn {
@@ -204,4 +212,42 @@ button {
   object-fit: cover;
   width: 100%;
   border-radius: 50%;
+}
+/* contact */
+
+.contact {
+  padding: 1rem 0;
+  background-color: white;
+}
+
+.contact > h1 {
+  margin-bottom: 1rem;
+}
+
+.contact > a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  padding: 0.25rem 0;
+  margin-left: 12px;
+  cursor: pointer;
+}
+
+.contact > a:hover > p {
+  color: #6b6b6b;
+}
+
+#contact-mail:hover > #contact-mail-icon {
+  color: red;
+}
+
+#contact-phone:hover > #contact-phone-icon {
+  color: black;
+}
+#contact-linkedin:hover > #contact-linkedin-icon {
+  color: #0a66c2;
+}
+#contact-github:hover > #contact-github-icon {
+  color: black;
 }
