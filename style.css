@@ -35,26 +35,84 @@ button {
   height: 100%;
   width: 100%;
   background: linear-gradient(#e66465, #9198e5);
+  display: none;
+}
+
+/* welcome content */
+
+#welcome-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.about {
+  text-align: center;
+}
+
+.about > h1 {
+  position: relative;
+  overflow: hidden;
+  font-family: "Roboto Mono", monospace;
+}
+
+h1::before {
+  content: "";
+  position: absolute;
+  width: 0.125em;
+  height: 1em;
+  left: 0;
+  top: 5px;
+  background: black;
+  z-index: 1;
+  opacity: 0;
+  animation: typetext 6s steps(39) 1s forwards, blink 400ms 1s infinite;
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  animation: typetext 6s steps(39) 1s forwards;
+}
+
+#about-sub {
+  padding: 1rem 0;
+  transform: translateY(4rem);
+  opacity: 0;
+  animation: fadeIn 2s 6s forwards;
+}
+
+@keyframes typetext {
+  to {
+    left: 100%;
+  }
+}
+@keyframes blink {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .main-container {
   width: 90%;
   margin: 0 auto;
 }
-
-/* navbar */
-
 header {
-  height: 80px;
+  height: 100px;
 }
-/* .navbar-mobile {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
-  position: fixed;
-  left: 0;
-  top: 0;
-} */
+
 .navbar {
   padding: 2rem 0;
   width: 100vw;
@@ -142,13 +200,7 @@ header {
 .modal {
   background-color: white;
 }
-/* about */
-.about {
-  text-align: center;
-}
-#about-sub {
-  padding: 1rem 0;
-}
+/* tech */
 
 .tech-stack {
   padding: 1rem 0;
