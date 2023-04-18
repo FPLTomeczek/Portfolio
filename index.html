@@ -12,18 +12,36 @@
       src="https://kit.fontawesome.com/19b70ca065.js"
       crossorigin="anonymous"
     ></script>
+    <script defer src="index.js"></script>
     <title>Tomasz Skrzypiński - Front-End Developer</title>
   </head>
   <body>
     <div class="app" id="top">
-      <header>
-        <nav class="navbar">
+      <div class="modal" id="modal">
+        <i class="fa-solid fa-xmark" id="close-modal"></i>
+        <div class="nav-modal-list">
+          <ul id="modal-list">
+            <a href="#top"><li>Home</li></a>
+            <a href="#experience"><li>Experience</li></a>
+            <a href="#projects"><li>Projects</li></a>
+            <a href="#contact"><li>Contact</li></a>
+          </ul>
+        </div>
+      </div>
+
+      <header id="header">
+        <nav class="navbar" id="navbar">
           <ul>
             <a href="#top"><li>Home</li></a>
             <a href="#experience"><li>Experience</li></a>
             <a href="#projects"><li>Projects</li></a>
             <a href="#contact"><li>Contact</li></a>
           </ul>
+        </nav>
+
+        <nav class="navbar" id="navbar-mobile">
+          <p>FPLTomeczek</p>
+          <i class="fa-solid fa-sliders" id="nav-slider"></i>
         </nav>
       </header>
 

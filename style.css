@@ -15,6 +15,9 @@ h5,
 h6 {
   color: black;
 }
+ul {
+  list-style-type: none;
+}
 h1 {
   text-align: center;
 }
@@ -42,16 +45,30 @@ button {
 /* navbar */
 
 header {
-  height: 4rem;
+  height: 80px;
 }
+/* .navbar-mobile {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  position: fixed;
+  left: 0;
+  top: 0;
+} */
 .navbar {
   padding: 2rem 0;
   width: 100vw;
   display: flex;
-  justify-content: space-around;
   position: fixed;
   left: 0;
   top: 0;
+  z-index: 10;
+  justify-content: space-around;
+}
+#navbar {
+  display: none;
+}
+#navbar-mobile {
 }
 .navbar ul {
   display: flex;
@@ -60,14 +77,71 @@ header {
   list-style-type: none;
   justify-content: space-around;
 }
-.nav-list {
+.modal {
   width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 20;
+  transform: translateX(-100%);
+}
+.modal > i {
+  position: absolute;
+  top: 5%;
+  right: 10%;
+  font-size: 2rem;
+  color: red;
+  cursor: pointer;
+}
+.nav-modal-list {
+  height: 100%;
+}
+.nav-modal-list > ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 4rem;
+}
+.nav-modal-list li:hover {
+  color: black;
+}
+.close-modal {
+  animation: close-modal 2s forwards;
+}
+.open-modal {
+  animation: open-modal 2s forwards;
+}
+@keyframes close-modal {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 
+@keyframes open-modal {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.nav-scroll-bg {
+  background-color: white;
+}
+.nav-scroll-bg > * {
+  color: black;
+}
 .list-hidden {
   display: none;
 }
-
+.modal {
+  background-color: white;
+}
 /* about */
 .about {
   text-align: center;
