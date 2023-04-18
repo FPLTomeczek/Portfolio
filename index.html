@@ -15,15 +15,14 @@
     <title>Tomasz Skrzypiński - Front-End Developer</title>
   </head>
   <body>
-    <div class="app">
+    <div class="app" id="top">
       <header>
         <nav class="navbar">
           <ul>
-            <li>Home</li>
-            <li>Technologies</li>
-            <li>Experience</li>
-            <li>Education</li>
-            <li>Contact</li>
+            <a href="#top"><li>Home</li></a>
+            <a href="#experience"><li>Experience</li></a>
+            <a href="#projects"><li>Projects</li></a>
+            <a href="#contact"><li>Contact</li></a>
           </ul>
         </nav>
       </header>
@@ -74,8 +73,8 @@
         </section>
 
         <section>
+          <h1 id="experience">Experience</h1>
           <div class="timeline">
-            <h1>Experience</h1>
             <div class="line-axis"></div>
 
             <div class="container">
@@ -136,15 +135,111 @@
         </section>
 
         <section>
+          <h1 id="projects">Projects</h1>
           <div class="projects">
-            <h1>Projects</h1>
+            <div class="project">
+              <h2>Songuessr</h2>
+              <div class="screen-container">
+                <div class="screen">
+                  <img
+                    src="/img/songuessr.netlify.app.png"
+                    alt="songuessr-app"
+                    id="songuessr-img"
+                  />
+                </div>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/FPLTomeczek/guess_the_song"
+                  target="_blank"
+                >
+                  <i class="fa-brands fa-github"></i>
+                  <p>Code</p>
+                </a>
+
+                <a href="https://songuessr.netlify.app" target="_blank">
+                  <i class="fa-regular fa-share-from-square"></i>
+                  <p>Demo</p>
+                </a>
+              </div>
+              <p>
+                Challenge yourself in Songuessr app and check if you really know
+                your favourite artists. Whole project is based on Spotify Web
+                API
+              </p>
+            </div>
+
+            <div class="project">
+              <h2>Mammonous Furniture</h2>
+              <div class="screen-container">
+                <div class="screen">
+                  <img
+                    src="/img/mammonous-furniture.netlify.app.png"
+                    alt="mammonous-furniture-app"
+                    id="mammonous-img"
+                  />
+                </div>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/FPLTomeczek/store-furniture"
+                  target="_blank"
+                >
+                  <i class="fa-brands fa-github"></i>
+                  <p>Code</p>
+                </a>
+
+                <a
+                  href="https://mammonous-furniture.netlify.app"
+                  target="_blank"
+                >
+                  <i class="fa-regular fa-share-from-square"></i>
+                  <p>Demo</p>
+                </a>
+              </div>
+              <p>
+                In the Mammonous Furniture web store you can buy furniture to
+                your house. User can pick between various types of the home
+                furniture.
+              </p>
+            </div>
+
+            <div class="project">
+              <h2>Gymate Demo</h2>
+              <div class="screen-container">
+                <div class="screen">
+                  <img
+                    src="/img/gymate-demo.netlify.app.png"
+                    alt="gymate-demo-app"
+                    id="gymate-demo-img"
+                  />
+                </div>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/FPLTomeczek/gogym" target="_blank">
+                  <i class="fa-brands fa-github"></i>
+                  <p>Code</p>
+                </a>
+
+                <a href="https://gymate-demo.netlify.app" target="_blank">
+                  <i class="fa-regular fa-share-from-square"></i>
+                  <p>Demo</p>
+                </a>
+              </div>
+              <p>
+                The goal of application was to recreate another gym website
+                without looking up the code, main app is hosted on
+                https://gymate-iota.vercel.app. The only resources copied from
+                main app are images and text.
+              </p>
+            </div>
           </div>
         </section>
       </div>
 
       <footer>
         <div class="contact">
-          <h1>Contact</h1>
+          <h1 id="contact">Contact</h1>
 
           <a href="mailto: tomaszs18m@gmail.com" id="contact-mail">
             <i class="fa-regular fa-envelope" id="contact-mail-icon"></i>

@@ -4,6 +4,9 @@
   font-family: "Montserrat", sans-serif;
   color: #d6d6d6;
 }
+html {
+  scroll-behavior: smooth;
+}
 h1,
 h2,
 h3,
@@ -38,11 +41,17 @@ button {
 
 /* navbar */
 
+header {
+  height: 4rem;
+}
 .navbar {
   padding: 2rem 0;
   width: 100vw;
   display: flex;
   justify-content: space-around;
+  position: fixed;
+  left: 0;
+  top: 0;
 }
 .navbar ul {
   display: flex;
@@ -128,6 +137,7 @@ button {
   max-width: 100%;
   z-index: 0;
   margin-left: 5%;
+  margin-bottom: 2rem;
 }
 
 .container {
@@ -213,9 +223,74 @@ button {
   width: 100%;
   border-radius: 50%;
 }
+/* projects */
+.projects {
+  margin-top: 1rem;
+  background-color: white;
+  padding: 2rem 0;
+  border-radius: 0.5rem;
+}
+.project {
+  padding: 1rem;
+  text-align: center;
+}
+.screen-container {
+  display: flex;
+  justify-content: center;
+}
+.screen {
+  margin-top: 1rem;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 1rem;
+  border: 1px solid black;
+}
+.screen img {
+  width: 100%;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  transition: bottom 11s;
+}
+#songuessr-img {
+  bottom: -1200px;
+}
+#mammonous-img {
+  bottom: -2465px;
+}
+#gymate-demo-img {
+  bottom: -7652px;
+}
+#songuessr-img:hover,
+#mammonous-img:hover {
+  bottom: 0;
+  transition: bottom 11s;
+}
+#gymate-demo-img:hover {
+  bottom: 0;
+  transition: bottom 30s linear;
+}
+
+.project-links {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+.project-links > a > i {
+  color: black;
+}
+.project-links > a > p {
+  color: #6b6b6b;
+}
+
 /* contact */
 
 .contact {
+  margin-top: 2rem;
   padding: 1rem 0;
   background-color: white;
 }
