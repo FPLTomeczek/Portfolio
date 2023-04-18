@@ -3,6 +3,7 @@
   padding: 0;
   font-family: "Montserrat", sans-serif;
   color: #d6d6d6;
+  overflow-x: hidden;
 }
 html {
   scroll-behavior: smooth;
@@ -35,7 +36,14 @@ button {
   height: 100%;
   width: 100%;
   background: linear-gradient(#e66465, #9198e5);
-  display: none;
+  transform: translateX(-100%);
+  animation: app-slide-in 2s 8s forwards;
+}
+
+@keyframes app-slide-in {
+  to {
+    transform: translateX(0);
+  }
 }
 
 /* welcome content */
@@ -45,10 +53,18 @@ button {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(#e66465, #9198e5);
+  position: fixed;
 }
 
 .about {
+  position: relative;
+  display: flex;
   text-align: center;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .about > h1 {
@@ -70,14 +86,13 @@ h1::before {
   animation: typetext 6s steps(39) 1s forwards, blink 400ms 1s infinite;
 }
 
-h1::after {
+.about::after {
   content: "";
   position: absolute;
-  top: 0;
+  height: 100vh;
   left: 0;
   right: 0;
-  bottom: 0;
-  background: white;
+  background: linear-gradient(#e66465, #9198e5);
   animation: typetext 6s steps(39) 1s forwards;
 }
 
@@ -261,7 +276,7 @@ header {
 .timeline {
   position: relative;
   max-width: 100%;
-  z-index: 0;
+  z-index: 30;
   margin-left: 5%;
   margin-bottom: 2rem;
 }
@@ -333,7 +348,7 @@ header {
   width: 6px;
   left: -10px;
   background-color: white;
-  z-index: 1;
+  z-index: 30;
   animation: line-animation 8s forwards linear;
 }
 .logo {
@@ -342,7 +357,7 @@ header {
   position: absolute;
   left: -62px;
   top: 8%;
-  z-index: 0;
+  z-index: 30;
 }
 .logo img {
   object-fit: cover;
