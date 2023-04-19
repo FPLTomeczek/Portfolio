@@ -14,6 +14,7 @@
   --node-color: #3c873a;
   --java-color: #f89820;
   --python-color: #4b8bbe;
+  --triangle-size: 18px;
 }
 html {
   scroll-behavior: smooth;
@@ -41,9 +42,18 @@ a {
   color: var(--dark-gray);
 }
 
+p {
+  line-height: 1.5;
+}
+
 button {
   background-color: transparent;
   border: none;
+}
+
+section {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .app {
@@ -161,6 +171,7 @@ button {
   width: 90%;
   margin: 0 auto;
 }
+
 .navbar {
   position: fixed;
   padding: 2rem 0;
@@ -197,6 +208,10 @@ button {
   font-size: 0.7rem;
   list-style-type: none;
   justify-content: space-around;
+}
+.navbar li {
+  color: white;
+  font-size: 1.5em;
 }
 
 @keyframes fade-in-navbar {
@@ -275,6 +290,17 @@ button {
   border-radius: 5px;
   margin: 2rem 0;
   text-align: center;
+}
+
+.about p {
+  margin: auto 0;
+  font-size: 1.25em;
+}
+@media (min-width: 780px) {
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 #about-heading {
@@ -378,6 +404,7 @@ button {
   margin-left: 20px;
   opacity: 0;
 }
+
 #text-box-1 {
   animation: text-box_fade-in 2s forwards;
 }
@@ -399,16 +426,17 @@ button {
 .text-box > p {
   margin-top: 4px;
 }
-.text-box .triangle {
+.triangle {
   top: 10%;
-  left: -15px;
+  left: calc(var(--triangle-size) * -1);
   position: absolute;
   width: 0;
   height: 0;
-  border-right: 15px solid white;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
+  border-top: var(--triangle-size) solid transparent;
+  border-bottom: var(--triangle-size) solid transparent;
+  border-right: var(--triangle-size) solid white;
 }
+
 @keyframes line-animation {
   from {
     height: 0;
@@ -438,6 +466,36 @@ button {
   width: 100%;
   border-radius: 50%;
 }
+
+@media (min-width: 780px) {
+  .timeline {
+    margin-left: 0;
+  }
+  .text-box {
+    margin-left: 0;
+  }
+  .box-left {
+    margin-right: 55%;
+  }
+  .box-right {
+    margin-left: 55%;
+  }
+  .line-axis {
+    left: calc(50% - 3px);
+  }
+  .logo-left {
+    left: calc(100% + var(--triangle-size) + 6px);
+  }
+  .left-triangle {
+    border-left: var(--triangle-size) solid white;
+    border-right: none;
+    left: 100%;
+  }
+  .right-triangle {
+    left: calc((var(--triangle-size)) * -1);
+  }
+}
+
 /* projects */
 .projects {
   padding: 2rem 0;
@@ -510,6 +568,11 @@ button {
 .used-tech p {
   color: var(--dark-gray);
 }
+#fpltools-video {
+  margin-top: 1rem;
+}
+
+/* contact */
 .contact {
   padding: 1rem 0;
   background-color: white;
