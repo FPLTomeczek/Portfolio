@@ -627,11 +627,11 @@ section {
   background-color: white;
 }
 
-.contact > h1 {
+.contact h1 {
   margin-bottom: 1rem;
 }
 
-.contact > a {
+.contact a {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -641,7 +641,7 @@ section {
   cursor: pointer;
 }
 
-.contact > a:hover > p {
+.contact a:hover > p {
   color: var(--dark-gray);
 }
 
@@ -657,4 +657,20 @@ section {
 }
 #contact-github:hover > #contact-github-icon {
   color: black;
+}
+
+@media (min-width: 780px) {
+  .contacts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 40%;
+    margin: 0 auto;
+    gap: 1rem;
+  }
+  #contact-mail {
+    justify-content: flex-end;
+  }
+  #contact-linkedin {
+    justify-content: flex-end;
+  }
 }
