@@ -161,10 +161,6 @@ button {
   width: 90%;
   margin: 0 auto;
 }
-header {
-  /* height: 80px; */
-}
-
 .navbar {
   position: fixed;
   padding: 2rem 0;
@@ -496,9 +492,11 @@ header {
 .project-links {
   display: flex;
   justify-content: center;
-  cursor: pointer;
   gap: 2rem;
   padding: 1rem 0;
+}
+.project-links a {
+  cursor: pointer;
 }
 .project-links > a > i {
   color: black;
