@@ -15,6 +15,8 @@
   --java-color: #f89820;
   --python-color: #4b8bbe;
   --triangle-size: 18px;
+  --start-gradient: #e66465;
+  --end-gradient: #9198e5;
 }
 html {
   scroll-behavior: smooth;
@@ -59,7 +61,7 @@ section {
 .app {
   height: 100%;
   width: 100%;
-  background: linear-gradient(#e66465, #9198e5);
+  background: linear-gradient(var(--start-gradient), var(--end-gradient));
   transform: translateX(-100%);
   /* animation: app-slide-in 2s var(--welcome-page-duration) forwards; */
 
@@ -88,7 +90,7 @@ section {
   align-items: center;
   min-height: 100vh;
   width: 100%;
-  background: linear-gradient(#e66465, #9198e5);
+  background: linear-gradient(var(--start-gradient), var(--end-gradient));
   position: fixed;
   top: 0;
   left: 0;
@@ -130,7 +132,7 @@ section {
   height: 100vh;
   left: 0;
   right: 0;
-  background: linear-gradient(#e66465, #9198e5);
+  background: linear-gradient(var(--start-gradient), var(--end-gradient));
   animation: typetext var(--typing-duration) steps(39) 1s forwards;
 }
 
@@ -185,6 +187,20 @@ section {
   justify-content: space-around;
   opacity: 0;
 }
+.navbar li {
+  transition: color 1s;
+  color: white;
+  font-size: 1.5em;
+}
+
+.navbar li:hover,
+#nav-slider:hover {
+  color: var(--start-gradient);
+}
+#nav-slider {
+  cursor: pointer;
+  transition: color 1s;
+}
 .animate-navbar {
   animation: fade-in-navbar 2s var(--welcome-page-duration) forwards;
 }
@@ -208,10 +224,6 @@ section {
   font-size: 0.7rem;
   list-style-type: none;
   justify-content: space-around;
-}
-.navbar li {
-  color: white;
-  font-size: 1.5em;
 }
 
 @keyframes fade-in-navbar {
