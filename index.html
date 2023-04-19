@@ -16,83 +16,93 @@
     <title>Tomasz Skrzypiński - Front-End Developer</title>
   </head>
   <body>
-    <div id="welcome-message">
-      <div class="about">
+    <!-- <div id="welcome-message">
+      <div class="about-entry-page">
         <h1>Tomasz Skrzypiński - Frontend Developer</h1>
-        <p id="about-sub">
+        <p id="about-entry-page-sub">
           Hello, I'm Junior Frontend Developer and I want to get my first job as
           Web Developer
         </p>
       </div>
+    </div> -->
+
+    <header id="header">
+      <nav class="navbar animate-navbar" id="navbar">
+        <ul>
+          <a href="#top"><li>Home</li></a>
+          <a href="#experience"><li>Experience</li></a>
+          <a href="#projects"><li>Projects</li></a>
+          <a href="#contact"><li>Contact</li></a>
+        </ul>
+      </nav>
+
+      <nav class="navbar animate-navbar" id="navbar-mobile">
+        <p>FPLTomeczek</p>
+        <i class="fa-solid fa-sliders" id="nav-slider"></i>
+      </nav>
+    </header>
+
+    <div class="modal" id="modal">
+      <i class="fa-solid fa-xmark" id="close-modal"></i>
+      <div class="nav-modal-list">
+        <ul id="modal-list">
+          <a href="#top"><li>Home</li></a>
+          <a href="#experience"><li>Experience</li></a>
+          <a href="#projects"><li>Projects</li></a>
+          <a href="#contact"><li>Contact</li></a>
+        </ul>
+      </div>
     </div>
 
     <div class="app" id="top">
-      <div class="modal" id="modal">
-        <i class="fa-solid fa-xmark" id="close-modal"></i>
-        <div class="nav-modal-list">
-          <ul id="modal-list">
-            <a href="#top"><li>Home</li></a>
-            <a href="#experience"><li>Experience</li></a>
-            <a href="#projects"><li>Projects</li></a>
-            <a href="#contact"><li>Contact</li></a>
-          </ul>
-        </div>
-      </div>
-
-      <header id="header">
-        <nav class="navbar" id="navbar">
-          <ul>
-            <a href="#top"><li>Home</li></a>
-            <a href="#experience"><li>Experience</li></a>
-            <a href="#projects"><li>Projects</li></a>
-            <a href="#contact"><li>Contact</li></a>
-          </ul>
-        </nav>
-
-        <nav class="navbar" id="navbar-mobile">
-          <p>FPLTomeczek</p>
-          <i class="fa-solid fa-sliders" id="nav-slider"></i>
-        </nav>
-      </header>
-
       <div class="main-container">
         <section>
-          <div class="tech-stack">
-            <div class="main-tech">
-              <h4>Main Technologies</h4>
-              <div class="tech-icons">
-                <button class="icon-btn">
-                  <i class="fa-brands fa-html5"></i>
-                </button>
-                <button class="icon-btn">
-                  <i class="fa-brands fa-js"></i>
-                </button>
-                <button class="icon-btn">
-                  <i class="fa-brands fa-css3-alt"></i>
-                </button>
-                <button class="icon-btn">
-                  <i class="fa-brands fa-react"></i>
-                </button>
+          <h1 id="about-heading">About Me</h1>
+          <div class="about">
+            <p>
+              Hello, my name is <b>Tomasz Skrzypiński</b> and this is my
+              portfolio website. All the code of this project was created in
+              <span id="html-span">HTML</span>,
+              <span id="css-span">CSS</span> and
+              <span id="js-span">Vanlla JS</span>
+            </p>
+            <div class="tech-stack">
+              <div class="main-tech">
+                <h3>Main Technologies</h3>
+                <div class="tech-icons">
+                  <button class="icon-btn">
+                    <i class="fa-brands fa-html5"></i>
+                  </button>
+                  <button class="icon-btn">
+                    <i class="fa-brands fa-js"></i>
+                  </button>
+                  <button class="icon-btn">
+                    <i class="fa-brands fa-css3-alt"></i>
+                  </button>
+                  <button class="icon-btn">
+                    <i class="fa-brands fa-react"></i>
+                  </button>
+                </div>
               </div>
-            </div>
-            <div class="secondary-tech">
-              <h4>Secondary Technologies</h4>
-              <div class="tech-icons">
-                <button class="icon-btn">
-                  <i class="fa-brands fa-node-js"></i>
-                </button>
-                <button class="icon-btn">
-                  <i class="fa-brands fa-java"></i>
-                </button>
-                <button class="icon-btn">
-                  <i class="fa-brands fa-python"></i>
-                </button>
+              <div class="secondary-tech">
+                <h3>Secondary Technologies</h3>
+                <div class="tech-icons">
+                  <button class="icon-btn">
+                    <i class="fa-brands fa-node-js"></i>
+                  </button>
+                  <button class="icon-btn">
+                    <i class="fa-brands fa-java"></i>
+                  </button>
+                  <button class="icon-btn">
+                    <i class="fa-brands fa-python"></i>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section>
+        <section id="experience-section">
           <h1 id="experience">Experience</h1>
           <div class="timeline">
             <div class="line-axis"></div>
@@ -181,7 +191,13 @@
                   <i class="fa-regular fa-share-from-square"></i>
                   <p>Demo</p>
                 </a>
+
+                <div class="used-tech">
+                  <i class="fa-brands fa-react"></i>
+                  <p>React</p>
+                </div>
               </div>
+
               <p>
                 Challenge yourself in Songuessr app and check if you really know
                 your favourite artists. Whole project is based on Spotify Web
@@ -216,6 +232,10 @@
                   <i class="fa-regular fa-share-from-square"></i>
                   <p>Demo</p>
                 </a>
+                <div class="used-tech">
+                  <i class="fa-brands fa-react"></i>
+                  <p>React</p>
+                </div>
               </div>
               <p>
                 In the Mammonous Furniture web store you can buy furniture to
@@ -245,6 +265,10 @@
                   <i class="fa-regular fa-share-from-square"></i>
                   <p>Demo</p>
                 </a>
+                <div class="used-tech">
+                  <i class="fa-brands fa-react"></i>
+                  <p>React</p>
+                </div>
               </div>
               <p>
                 The goal of application was to recreate another gym website

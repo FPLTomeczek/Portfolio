@@ -1,18 +1,30 @@
+function setHeader() {
+  if (window.outerWidth <= 780) {
+    header[0].style.height = `${navbar_mobile.offsetHeight}px`;
+  } else {
+    header[0].style.height = `${navbar.offsetHeight}px`;
+  }
+}
+
 var navbar = document.getElementById("navbar");
 var navbar_mobile = document.getElementById("navbar-mobile");
 
-addEventListener("scroll", () => {
-  if (window.scrollY >= 78) {
-    navbar.classList.add("nav-scroll-bg");
-  } else {
-    navbar.classList.remove("nav-scroll-bg");
-  }
-  if (window.scrollY >= 51) {
-    navbar_mobile.classList.add("nav-scroll-bg");
-  } else {
-    navbar_mobile.classList.remove("nav-scroll-bg");
-  }
-});
+// setTimeout(() => {
+//   navbar.classList.add("navbar");
+// }, 3000);
+
+setTimeout(() => {
+  navbar.classList.remove("animate-navbar");
+  navbar_mobile.classList.remove("animate-navbar");
+  navbar.classList.add("opacity-1");
+  navbar_mobile.classList.add("opacity-1");
+  // page duration
+}, 3000);
+
+var header = document.getElementsByTagName("header");
+
+addEventListener("load", setHeader);
+addEventListener("resize", setHeader);
 
 var modal = document.getElementById("modal");
 var close_modal = document.getElementById("close-modal");
