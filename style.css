@@ -509,11 +509,15 @@ section {
 }
 
 /* projects */
+#projects-section {
+  max-width: 1500px;
+}
 .projects {
   padding: 2rem 0;
   border-radius: 0.5rem;
 }
 .project {
+  max-width: 900px;
   background-color: white;
   padding: 1rem;
   text-align: center;
@@ -582,6 +586,39 @@ section {
 }
 #fpltools-video {
   margin-top: 1rem;
+}
+.project-right-side > h2 {
+  display: none;
+}
+
+@media (min-width: 750px) {
+  .project-container {
+    display: flex;
+  }
+  .project-left-side {
+    width: 50%;
+  }
+  .project-right-side {
+    margin: auto 0;
+    width: 50%;
+  }
+  .project > h2 {
+    display: none;
+  }
+  #fpltools-project > h2 {
+    display: block;
+  }
+  .project-right-side > h2 {
+    display: block;
+    padding: 1rem 0;
+  }
+  .project-flex-end {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .project-flex-end .project-left-side {
+    order: 2;
+  }
 }
 
 /* contact */
