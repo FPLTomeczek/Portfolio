@@ -6,6 +6,28 @@ function setHeader() {
   }
 }
 
+function setLogoImagesTop() {
+  let marginSum = 0;
+  for (let i = 0; i < logo_images.length; i++) {
+    console.log(textbox_containers[i].offsetHeight);
+    logo_images[i].style.top = `${25 + marginSum}px`;
+    marginSum += textbox_containers[i].offsetHeight;
+  }
+}
+
+function onLoad() {
+  setHeader();
+  setLogoImagesTop();
+}
+
+function onResize() {
+  setHeader();
+  setLogoImagesTop();
+}
+
+var logo_images = document.getElementsByClassName("logo");
+var textbox_containers = document.getElementsByClassName("container");
+
 var navbar = document.getElementById("navbar");
 var navbar_mobile = document.getElementById("navbar-mobile");
 
@@ -23,8 +45,8 @@ setTimeout(() => {
 
 var header = document.getElementsByTagName("header");
 
-addEventListener("load", setHeader);
-addEventListener("resize", setHeader);
+addEventListener("load", onLoad);
+addEventListener("resize", onResize);
 
 var modal = document.getElementById("modal");
 var close_modal = document.getElementById("close-modal");

@@ -424,7 +424,7 @@ section {
   padding: 1rem;
 }
 
-@keyframes text-box_fade-in {
+@keyframes fade-in {
   from {
     opacity: 0;
   }
@@ -442,16 +442,16 @@ section {
 }
 
 #text-box-1 {
-  animation: text-box_fade-in 2s forwards;
+  animation: fade-in 2s forwards;
 }
 #text-box-2 {
-  animation: text-box_fade-in 2s 2s forwards;
+  animation: fade-in 2s 2s forwards;
 }
 #text-box-3 {
-  animation: text-box_fade-in 2s 4s forwards;
+  animation: fade-in 2s 4s forwards;
 }
 #text-box-4 {
-  animation: text-box_fade-in 2s 6s forwards;
+  animation: fade-in 2s 6s forwards;
 }
 .text-box > span {
   color: var(--dark-gray);
@@ -463,7 +463,7 @@ section {
   margin-top: 4px;
 }
 .triangle {
-  top: 10%;
+  top: 10px;
   left: calc(var(--triangle-size) * -1);
   position: absolute;
   width: 0;
@@ -494,7 +494,7 @@ section {
   width: 40px;
   height: 40px;
   position: absolute;
-  left: -62px;
+  left: -26px;
   top: 8%;
 }
 .logo img {
@@ -519,8 +519,8 @@ section {
   .line-axis {
     left: calc(50% - 3px);
   }
-  .logo-left {
-    left: calc(100% + var(--triangle-size) + 6px);
+  .logo {
+    left: calc(50% - 20px);
   }
   .left-triangle {
     border-left: var(--triangle-size) solid white;
