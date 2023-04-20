@@ -18,7 +18,7 @@ setTimeout(() => {
   navbar_mobile.classList.remove("animate-navbar");
   navbar.classList.add("opacity-1");
   navbar_mobile.classList.add("opacity-1");
-  // page duration
+  // page duration to 12000
 }, 3000);
 
 var header = document.getElementsByTagName("header");

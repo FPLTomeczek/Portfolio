@@ -6,6 +6,7 @@
 :root {
   --dark-gray: #6b6b6b;
   --typing-duration: 6s;
+  /* to 10 s */
   --welcome-page-duration: 1s;
   --html-color: #e34c26;
   --css-color: #264de4;
@@ -63,10 +64,10 @@ section {
   width: 100%;
   background: linear-gradient(var(--start-gradient), var(--end-gradient));
   transform: translateX(-100%);
-  /* animation: app-slide-in 2s var(--welcome-page-duration) forwards; */
+  animation: app-slide-in 2s var(--welcome-page-duration) forwards;
 
   /* demo */
-  animation: app-slide-in 2s forwards;
+  /* animation: app-slide-in 2s forwards; */
 }
 
 @keyframes app-slide-in {
@@ -77,9 +78,9 @@ section {
 
 @media (max-width: 780px) {
   /* TODO */
-  /* .app {
+  .app {
     animation-delay: 4s;
-  } */
+  }
 }
 
 /* welcome content */
@@ -523,6 +524,108 @@ section {
   text-align: center;
   margin: 1rem 0;
   border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#gymate-project {
+  position: relative;
+}
+
+.project-section {
+  position: relative;
+  z-index: 0;
+}
+
+#ball-img {
+  position: absolute;
+  left: calc(((100% - 900px) / 2) + 900px - 150px);
+  width: 300px;
+  top: calc(50% - 150px);
+  animation: spin 5s linear infinite;
+}
+#headphones-img {
+  position: absolute;
+  width: 200px;
+  height: 250px;
+  left: calc(((100% - 900px) / 2) - 100px);
+  top: calc(50% - 125px);
+  object-fit: cover;
+  animation: shake 0.4s infinite;
+}
+#furniture-img {
+  position: absolute;
+  width: 400px;
+  height: 300px;
+  top: calc(50% - 150px);
+  left: calc(((100% - 900px) / 2) + 900px - 200px);
+  object-fit: cover;
+}
+
+#gym-hand-img {
+  position: absolute;
+  left: -300px;
+  bottom: 0;
+  width: 400px;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.music-note {
+  position: absolute;
+  width: 50px;
+  height: 70px;
+  top: calc(50% - 35px);
+  object-fit: cover;
+  animation: slideTop 1s infinite;
+}
+
+#music-note-1 {
+  left: calc(((100% - 900px) / 2) - 100px);
+}
+#music-note-2 {
+  left: calc(((100% - 900px) / 2) - 50px);
+  animation-delay: 0.25s;
+}
+#music-note-3 {
+  left: calc(((100% - 900px) / 2));
+  animation-delay: 0.5s;
+}
+#music-note-4 {
+  left: calc(((100% - 900px) / 2) + 50px);
+  animation-delay: 0.75s;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slideTop {
+  from {
+  }
+  to {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 .screen-container {
   display: flex;
@@ -530,7 +633,7 @@ section {
 }
 .screen {
   margin-top: 1rem;
-  width: 300px;
+  width: 280px;
   height: 300px;
   overflow: hidden;
   position: relative;
@@ -545,13 +648,13 @@ section {
   transition: bottom 11s;
 }
 #songuessr-img {
-  bottom: -1200px;
+  bottom: -1103px;
 }
 #mammonous-img {
-  bottom: -2465px;
+  bottom: -2281px;
 }
 #gymate-demo-img {
-  bottom: -7652px;
+  bottom: -7121px;
 }
 #songuessr-img:hover,
 #mammonous-img:hover {
@@ -621,6 +724,12 @@ section {
   }
 }
 
+@media (max-width: 1460px) {
+  .project-img {
+    display: none;
+  }
+}
+
 /* contact */
 .contact {
   padding: 1rem 0;
@@ -663,13 +772,11 @@ section {
   .contacts {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    max-width: 40%;
+    grid-template-rows: 1fr 1fr;
     margin: 0 auto;
     gap: 1rem;
   }
-  #contact-mail {
-    justify-content: flex-end;
-  }
+  #contact-mail,
   #contact-linkedin {
     justify-content: flex-end;
   }
