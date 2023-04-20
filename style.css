@@ -25,7 +25,6 @@ html {
 body {
   overflow-x: hidden;
 }
-h1,
 h2,
 h3,
 h4,
@@ -33,13 +32,30 @@ h5,
 h6 {
   color: black;
 }
+h1 {
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.25);
+  padding: 1rem;
+  border-radius: 5px;
+}
+h1::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 3px;
+  background-color: black;
+  bottom: 5px;
+  left: 25%;
+  z-index: 100;
+}
 ul {
   list-style-type: none;
 }
-h1 {
-  text-align: center;
-}
-
 a {
   text-decoration: none;
   color: var(--dark-gray);
@@ -98,6 +114,12 @@ section {
   z-index: -1;
 }
 
+#about-heading-container {
+  padding-top: 1rem;
+}
+#about-heading::before {
+  background-color: #e46467;
+}
 .about-entry-page {
   position: relative;
   display: flex;
@@ -316,9 +338,6 @@ section {
   }
 }
 
-#about-heading {
-  padding-top: 2rem;
-}
 .about span {
   font-weight: 700;
 }
@@ -388,7 +407,11 @@ section {
   text-align: center;
 }
 
-/* timeline */
+/* experience */
+
+#experience-heading::before {
+  background-color: #dc6b75;
+}
 
 .timeline {
   position: relative;
@@ -510,6 +533,10 @@ section {
 }
 
 /* projects */
+
+#projects-heading::before {
+  background-color: #c77793;
+}
 #projects-section {
   max-width: 1500px;
 }
@@ -738,6 +765,11 @@ section {
 
 .contact h1 {
   margin-bottom: 1rem;
+  color: black;
+}
+
+#contact-heading::before {
+  background-color: var(--end-gradient);
 }
 
 .contact a {
