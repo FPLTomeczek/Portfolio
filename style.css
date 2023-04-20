@@ -6,7 +6,7 @@
 :root {
   --dark-gray: #6b6b6b;
   --typing-duration: 6s;
-  /* to 10 s */
+  /* to 12 s */
   --welcome-page-duration: 1s;
   --html-color: #e34c26;
   --css-color: #264de4;
@@ -78,7 +78,11 @@ section {
 .app {
   height: 100%;
   width: 100%;
-  background: linear-gradient(var(--start-gradient), var(--end-gradient));
+  background: linear-gradient(
+    to right,
+    var(--start-gradient),
+    var(--end-gradient)
+  );
   transform: translateX(-100%);
   animation: app-slide-in 2s var(--welcome-page-duration) forwards;
 
@@ -133,6 +137,7 @@ section {
   position: relative;
   overflow: hidden;
   font-family: "Roboto Mono", monospace;
+  background-color: transparent;
 }
 
 .about-entry-page > h1::before {
@@ -141,7 +146,7 @@ section {
   width: 0.125em;
   height: 1em;
   left: 0;
-  top: 5px;
+  top: calc(50% - 0.5em);
   background: black;
   z-index: 1;
   opacity: 0;
@@ -225,7 +230,7 @@ section {
   transition: color 1s;
 }
 .animate-navbar {
-  animation: fade-in-navbar 2s var(--welcome-page-duration) forwards;
+  animation: fade-in 2s var(--welcome-page-duration) forwards;
 }
 .opacity-1 {
   opacity: 1;
@@ -249,14 +254,6 @@ section {
   justify-content: space-around;
 }
 
-@keyframes fade-in-navbar {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 .modal {
   width: 100%;
   height: 100vh;
@@ -701,12 +698,52 @@ section {
 }
 .project-links a {
   cursor: pointer;
+  position: relative;
 }
+.project-links a::before,
+.used-tech::before {
+  content: "";
+  width: 140%;
+  height: 140%;
+  box-sizing: border-box;
+  position: absolute;
+  border-radius: 10%;
+  background-color: transparent;
+  left: -20%;
+  top: -20%;
+  outline-color: white;
+  outline-width: 2px;
+  outline-style: solid;
+  transition: outline-color 1s;
+}
+
+.project-link-1::before {
+  /* outline: 2px solid rgb(230, 100, 101, 0.25); */
+}
+.project-link-2::before {
+  /* outline: 2px solid rgb(188, 126, 165, 0.25); */
+}
+.project-link-3::before {
+  /* outline: 2px solid rgb(145, 152, 229, 0.25); */
+}
+.project-link-1:hover::before {
+  outline-color: rgb(230, 100, 101);
+}
+.project-link-2:hover::before {
+  outline-color: rgb(188, 126, 165);
+}
+.project-link-3:hover::before {
+  outline-color: rgb(145, 152, 229);
+}
+
 .project-links > a > i {
   color: black;
 }
 .project-links > a > p {
   color: var(--dark-gray);
+}
+.used-tech {
+  position: relative;
 }
 .used-tech i {
   color: var(--react-color);
