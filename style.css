@@ -364,7 +364,12 @@ section {
   padding: 1rem 0;
 }
 .icon-btn {
-  background-color: black;
+  background: linear-gradient(
+    to right,
+    var(--start-gradient),
+    var(--end-gradient)
+  );
+  background: var(--end-gradient);
   color: white;
   width: 40px;
   height: 40px;
@@ -813,21 +818,24 @@ section {
 }
 
 /* contact */
-.contact {
+.contact-container {
   padding: 1rem 0;
   background-color: white;
 }
 
-.contact h1 {
+.contact-container h1 {
   margin-bottom: 1rem;
   color: black;
 }
 
+.contacts {
+  font-weight: 600;
+}
 #contact-heading::before {
   background-color: var(--end-gradient);
 }
 
-.contact a {
+.contact-container a {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -837,31 +845,30 @@ section {
   cursor: pointer;
 }
 
-.contact a:hover > p {
-  color: var(--dark-gray);
-}
-
 #contact-mail:hover > #contact-mail-icon {
   color: red;
 }
 
-#contact-phone:hover > #contact-phone-icon {
-  color: black;
-}
 #contact-linkedin:hover > #contact-linkedin-icon {
   color: #0a66c2;
 }
-#contact-github:hover > #contact-github-icon {
+#contact-github:hover > #contact-github-icon,
+#contact-phone:hover > #contact-phone-icon,
+#contact-mail:hover > #contact-text-mail,
+#contact-phone:hover > #contact-text-phone,
+#contact-linkedin:hover > #contact-text-linkedin,
+#contact-github:hover > #contact-text-github {
   color: black;
 }
 
-@media (min-width: 780px) {
+@media (min-width: 750px) {
   .contacts {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     margin: 0 auto;
     gap: 1rem;
+    width: fit-content;
   }
   #contact-mail,
   #contact-linkedin {
