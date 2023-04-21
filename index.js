@@ -9,7 +9,6 @@ function setHeader() {
 function setLogoImagesTop() {
   let marginSum = 0;
   for (let i = 0; i < logo_images.length; i++) {
-    console.log(textbox_containers[i].offsetHeight);
     logo_images[i].style.top = `${25 + marginSum}px`;
     marginSum += textbox_containers[i].offsetHeight;
   }
@@ -27,13 +26,16 @@ function onResize() {
 
 var logo_images = document.getElementsByClassName("logo");
 var textbox_containers = document.getElementsByClassName("container");
-
 var navbar = document.getElementById("navbar");
 var navbar_mobile = document.getElementById("navbar-mobile");
 
-// setTimeout(() => {
-//   navbar.classList.add("navbar");
-// }, 3000);
+var entry_page_header = document.getElementById("entry-page-header");
+
+if (window.outerWidth <= 780) {
+  entry_page_header.innerHTML = "Tomasz Skrzypiński Frontend Developer";
+} else {
+  entry_page_header.innerHTML = "Tomasz Skrzypiński - Frontend Developer";
+}
 
 setTimeout(() => {
   navbar.classList.remove("animate-navbar");

@@ -5,9 +5,10 @@
 }
 :root {
   --dark-gray: #6b6b6b;
+  --mobile-delay: 4s;
   --typing-duration: 6s;
   /* to 12 s */
-  --welcome-page-duration: 2s;
+  --welcome-page-duration: 12s;
   --html-color: #e34c26;
   --css-color: #264de4;
   --js-color: #f0db4f;
@@ -24,6 +25,9 @@ html {
 }
 body {
   overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 h2,
 h3,
@@ -85,7 +89,6 @@ section {
   );
   transform: translateX(-100%);
   animation: app-slide-in 2s var(--welcome-page-duration) forwards;
-
   /* demo */
   /* animation: app-slide-in 2s forwards; */
 }
@@ -93,13 +96,6 @@ section {
 @keyframes app-slide-in {
   to {
     transform: translateX(0);
-  }
-}
-
-@media (max-width: 780px) {
-  /* TODO */
-  .app {
-    animation-delay: 4s;
   }
 }
 
@@ -328,7 +324,7 @@ section {
   margin: auto 0;
   font-size: 1.25em;
 }
-@media (min-width: 780px) {
+@media (min-width: 781px) {
   .about {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -486,7 +482,6 @@ section {
 
 .line-axis {
   position: absolute;
-  height: 100%;
   width: 6px;
   left: -10px;
   background-color: white;
@@ -519,7 +514,7 @@ section {
   border-radius: 50%;
 }
 
-@media (min-width: 780px) {
+@media (min-width: 781px) {
   .timeline {
     margin-left: 0;
   }
@@ -787,7 +782,7 @@ section {
   display: flex;
 }
 
-@media (min-width: 750px) {
+@media (min-width: 781px) {
   .project-container {
     display: flex;
   }
@@ -861,7 +856,7 @@ section {
   color: black;
 }
 
-@media (min-width: 750px) {
+@media (min-width: 781px) {
   .contacts {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -873,5 +868,38 @@ section {
   #contact-mail,
   #contact-linkedin {
     justify-content: flex-end;
+  }
+}
+
+/* overall app */
+
+@media (min-width: 781px) {
+  .about,
+  .project,
+  .text-box {
+    box-shadow: 0px 0px 30px black;
+  }
+}
+@media (max-width: 780px) {
+  .app,
+  .animate-navbar {
+    animation-delay: var(--mobile-delay);
+  }
+  .line-axis,
+  #logo-1,
+  #text-box-1 {
+    animation-delay: calc(var(--mobile-delay) + 2s);
+  }
+  #logo-2,
+  #text-box-2 {
+    animation-delay: calc(var(--mobile-delay) + 4s);
+  }
+  #logo-3,
+  #text-box-3 {
+    animation-delay: calc(var(--mobile-delay) + 6s);
+  }
+  #logo-4,
+  #text-box-4 {
+    animation-delay: calc(var(--mobile-delay) + 8s);
   }
 }
