@@ -7,7 +7,7 @@
   --dark-gray: #6b6b6b;
   --typing-duration: 6s;
   /* to 12 s */
-  --welcome-page-duration: 1s;
+  --welcome-page-duration: 2s;
   --html-color: #e34c26;
   --css-color: #264de4;
   --js-color: #f0db4f;
@@ -439,16 +439,16 @@ section {
 }
 
 #text-box-1 {
-  animation: fade-in 2s forwards;
+  animation: fade-in 2s var(--welcome-page-duration) forwards;
 }
 #text-box-2 {
-  animation: fade-in 2s 2s forwards;
+  animation: fade-in 2s calc(var(--welcome-page-duration) + 2s) forwards;
 }
 #text-box-3 {
-  animation: fade-in 2s 4s forwards;
+  animation: fade-in 2s calc(var(--welcome-page-duration) + 4s) forwards;
 }
 #text-box-4 {
-  animation: fade-in 2s 6s forwards;
+  animation: fade-in 2s calc(var(--welcome-page-duration) + 6s) forwards;
 }
 .text-box > span {
   color: var(--dark-gray);
@@ -485,7 +485,7 @@ section {
   width: 6px;
   left: -10px;
   background-color: white;
-  animation: line-animation 8s forwards linear;
+  animation: line-animation 8s var(--welcome-page-duration) forwards linear;
 }
 .logo {
   width: 40px;
@@ -493,6 +493,20 @@ section {
   position: absolute;
   left: -26px;
   top: 8%;
+  opacity: 0;
+  animation: fade-in 2s forwards linear;
+}
+#logo-1 {
+  animation-delay: var(--welcome-page-duration);
+}
+#logo-2 {
+  animation-delay: calc(var(--welcome-page-duration) + 2s);
+}
+#logo-3 {
+  animation-delay: calc(var(--welcome-page-duration) + 4s);
+}
+#logo-4 {
+  animation-delay: calc(var(--welcome-page-duration) + 6s);
 }
 .logo img {
   object-fit: cover;
@@ -551,72 +565,73 @@ section {
   box-sizing: border-box;
 }
 
-#gymate-project {
-  position: relative;
-}
-
 .project-section {
   position: relative;
   z-index: 0;
 }
 
-#ball-img {
+.ball-img {
   position: absolute;
-  left: calc(((100% - 900px) / 2) + 900px - 150px);
-  width: 300px;
-  top: calc(50% - 150px);
+  width: 20px;
   animation: spin 5s linear infinite;
+  top: 20px;
 }
-#headphones-img {
-  position: absolute;
-  width: 200px;
-  height: 250px;
-  left: calc(((100% - 900px) / 2) - 100px);
-  top: calc(50% - 125px);
-  object-fit: cover;
-  animation: shake 0.4s infinite;
+#ball-img-1 {
+  left: -25px;
 }
-#furniture-img {
-  position: absolute;
-  width: 400px;
-  height: 300px;
-  top: calc(50% - 150px);
-  left: calc(((100% - 900px) / 2) + 900px - 200px);
-  object-fit: cover;
+#ball-img-2 {
+  right: -25px;
 }
 
-#gym-hand-img {
+#headphones-img {
   position: absolute;
-  left: -300px;
-  bottom: 0;
-  width: 400px;
+  width: 40px;
+  height: 50px;
+  left: calc(50% - 20px);
+  top: -50px;
   object-fit: cover;
-  z-index: -2;
+  animation: shake 0.4s infinite;
 }
 
 .music-note {
   position: absolute;
-  width: 50px;
-  height: 70px;
+  width: 20px;
+  height: 30px;
   top: calc(50% - 35px);
   object-fit: cover;
-  animation: slideTop 1s infinite;
+  animation: slideTop 1.25s infinite;
 }
 
 #music-note-1 {
-  left: calc(((100% - 900px) / 2) - 100px);
+  left: 0;
 }
 #music-note-2 {
-  left: calc(((100% - 900px) / 2) - 50px);
+  left: 25%;
   animation-delay: 0.25s;
 }
 #music-note-3 {
-  left: calc(((100% - 900px) / 2));
+  left: 50%;
   animation-delay: 0.5s;
 }
 #music-note-4 {
-  left: calc(((100% - 900px) / 2) + 50px);
+  left: 75%;
   animation-delay: 0.75s;
+}
+#music-note-5 {
+  left: 100%;
+  animation-delay: 1s;
+}
+#chair {
+  position: absolute;
+  left: calc(50% - 50px);
+  top: -80px;
+  width: 100px;
+}
+#squat {
+  position: absolute;
+  left: calc(50% - 50px);
+  top: -90px;
+  width: 100px;
 }
 
 @keyframes spin {
@@ -671,6 +686,19 @@ section {
   position: absolute;
   transition: bottom 11s;
 }
+.project-title-container {
+  display: flex;
+  justify-content: center;
+}
+.project-title {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+}
+#fpltools-video {
+  margin-top: 1rem;
+}
 #songuessr-img {
   bottom: -1103px;
 }
@@ -717,15 +745,6 @@ section {
   transition: outline-color 1s;
 }
 
-.project-link-1::before {
-  /* outline: 2px solid rgb(230, 100, 101, 0.25); */
-}
-.project-link-2::before {
-  /* outline: 2px solid rgb(188, 126, 165, 0.25); */
-}
-.project-link-3::before {
-  /* outline: 2px solid rgb(145, 152, 229, 0.25); */
-}
 .project-link-1:hover::before {
   outline-color: rgb(230, 100, 101);
 }
@@ -751,11 +770,16 @@ section {
 .used-tech p {
   color: var(--dark-gray);
 }
-#fpltools-video {
-  margin-top: 1rem;
+
+.project-right-side > h2,
+.project-title > h2 {
+  padding: 1rem 0;
 }
-.project-right-side > h2 {
+.project-title-container {
   display: none;
+}
+#project-title-container-fpltools {
+  display: flex;
 }
 
 @media (min-width: 750px) {
@@ -772,13 +796,10 @@ section {
   .project > h2 {
     display: none;
   }
-  #fpltools-project > h2 {
-    display: block;
+  .project-title-container {
+    display: flex;
   }
-  .project-right-side > h2 {
-    display: block;
-    padding: 1rem 0;
-  }
+
   .project-flex-end {
     display: flex;
     justify-content: flex-end;
@@ -789,9 +810,6 @@ section {
 }
 
 @media (max-width: 1460px) {
-  .project-img {
-    display: none;
-  }
 }
 
 /* contact */
