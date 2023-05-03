@@ -134,6 +134,7 @@ section {
   overflow: hidden;
   font-family: "Roboto Mono", monospace;
   background-color: transparent;
+  padding: 0;
 }
 
 .about-entry-page > h1::before {
