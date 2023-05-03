@@ -14,6 +14,32 @@ function setLogoImagesTop() {
   }
 }
 
+function resetAnimations() {
+  const welcome_message_container = document.querySelector("#welcome-message");
+  const app = document.querySelector(".app");
+  const line_axis = document.querySelector(".line-axis");
+  const text_boxes = document.getElementsByClassName("text-box");
+  const logos = document.getElementsByClassName("logo");
+
+  for (let textbox of text_boxes) {
+    textbox.style.opacity = "1";
+    textbox.style.animation = "none";
+  }
+  for (let logo of logos) {
+    logo.style.opacity = "1";
+    logo.style.animation = "none";
+  }
+  line_axis.style.animation = "none";
+  line_axis.style.height = "100%";
+  welcome_message_container.style.display = "none";
+  app.style.animation = "none";
+  app.style.transform = "translateX(0)";
+  navbar.style.opacity = "1";
+  navbar.style.animation = "none";
+  navbar_mobile.style.opacity = "1";
+  navbar_mobile.style.animation = "none";
+}
+
 function onLoad() {
   setHeader();
   setLogoImagesTop();
@@ -71,4 +97,15 @@ for (let i = 0; i < modal_list.children.length; i++) {
     modal.classList.remove("open-modal");
     modal.classList.add("close-modal");
   };
+}
+
+const welcome_page_duration = 12;
+
+if (!sessionStorage.getItem("entryPageLoaded")) {
+  setTimeout(
+    () => sessionStorage.setItem("entryPageLoaded", true),
+    welcome_page_duration * 1000
+  );
+} else {
+  resetAnimations();
 }
