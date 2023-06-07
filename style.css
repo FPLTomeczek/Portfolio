@@ -577,10 +577,10 @@ section {
   animation: spin 5s linear infinite;
   top: 20px;
 }
-#ball-img-1 {
+.ball-img-1 {
   left: -25px;
 }
-#ball-img-2 {
+.ball-img-2 {
   right: -25px;
 }
 
