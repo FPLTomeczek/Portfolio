@@ -1,0 +1,2 @@
+entrypage subtitle
+resize while animation
