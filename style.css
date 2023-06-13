@@ -709,8 +709,13 @@ section {
 #gymate-demo-img {
   bottom: -7121px;
 }
+#fpltoolsv2 {
+  bottom: -1395px;
+}
+
 #songuessr-img:hover,
-#mammonous-img:hover {
+#mammonous-img:hover,
+#fpltoolsv2:hover {
   bottom: 0;
   transition: bottom 11s;
 }
