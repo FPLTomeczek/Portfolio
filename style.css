@@ -360,12 +360,10 @@ section {
   gap: 1rem;
   padding: 1rem 0;
 }
-.icon-btn {
-  background: linear-gradient(
-    to right,
-    var(--start-gradient),
-    var(--end-gradient)
-  );
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: var(--end-gradient);
   color: white;
   width: 40px;
@@ -373,30 +371,34 @@ section {
   border-radius: 50%;
   cursor: pointer;
 }
-.icon-btn i {
+.icon-container i,
+.icon-container svg {
   transition: all 1s;
   font-size: 1rem;
 }
 
-.icon-btn:hover .fa-html5 {
+.icon-container:hover .fa-html5 {
   color: var(--html-color);
 }
-.icon-btn:hover .fa-js {
+.icon-container:hover .fa-js {
   color: var(--js-color);
 }
-.icon-btn:hover .fa-css3-alt {
+.icon-container:hover .fa-css3-alt {
   color: var(--css-color);
 }
-.icon-btn:hover .fa-react {
+.icon-container:hover .fa-react {
   color: var(--react-color);
 }
-.icon-btn:hover .fa-node-js {
+.icon-container:hover .fa-node-js {
   color: var(--node-color);
 }
-.icon-btn:hover .fa-java {
+.icon-container:hover .fa-java {
   color: var(--java-color);
 }
-.icon-btn:hover .fa-python {
+.icon-container:hover .fa-python {
+  color: var(--python-color);
+}
+.icon-container:hover .svg-typescript {
   color: var(--python-color);
 }
 
